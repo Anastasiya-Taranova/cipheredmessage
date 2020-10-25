@@ -4,12 +4,15 @@ import sys
 
 def text_from_file():
     with open(sys.argv[1], 'r') as f:
-        text = [line.rstrip('\n') for line in f]
+        text = [line.replace(' ', '') for line in f]
         return text
 
 
+r = re.compile(r'([a-z])\1+')
+
+
 def remove_identical_letters(string):
-    text = re.sub(r'([a-z])\1+', r'', string)
+    text = r.sub(r'', string)
     print(text)
 
 
