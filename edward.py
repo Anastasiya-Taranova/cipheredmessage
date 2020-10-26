@@ -8,7 +8,7 @@ def text_from_file():
         return text
 
 
-r = re.compile(r'([a-z])\1+')
+r = re.compile(r'([a-z])\1')
 
 
 def remove_identical_letters(string):
